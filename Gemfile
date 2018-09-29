@@ -35,6 +35,7 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 
 #画像の加工とか
 gem 'mini_magick'
+gem 'fog'
 
 
 
