@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+	background-color: #EAECEE;
+}
+.message{
+	box-sizing: border-box;
+	background-color: #6EABB6;
+	margin-bottom: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding:5px;
+	border-bottom: 4px solid #EE91F9;
+ 
+}
+
+.message-title{
+  margin-top: 0px;
+  margin-bottom:25px;
+
+}
+
+.message-show{
+	background-color: #F4F6F6;
+	box-sizing: border-box;
+	padding:15px;
+	font-size: 1.2em;
+}
+  
+
+.message-posted-by{
+	font-size: 0.9em;
+}
+
+.comments_box{
+	background-color: #F4F8F9;
+	padding:10px;
+	border: 1px solid #7FC8DC;
+	margin-top: 30px;
+}
+
+.reply-to-message{
+	padding-top: 15px;
+}
+
+.btn-group{
+padding-top: 10px;
+
+}
+
+
+/*likeボタンの*/
+.like-btn{
+	color:#8899a6;
+
+}	
+ 
+
+.like-btn-unlike{
+	color: #ff2581;
+	
+}
+ 
+.posts-show-item .fa {
+  font-size: 20px;
+  margin-right: 5px;
+
+}
+
+
+.posts-show-item a {
+    text-decoration: none;
+  
+}
+ 
+/*voteボタンの*/
+
+.vote-btn{
+	color:#8899a6;
+
+}	
+ 
+
+.vote-btn-donwvote{
+	color: #ff2581;
+	
+}
+/*voteボタンの終了*/
+
+.center {
+	text-align:center;
+}
+
+
+/*index_like-iconボタンの*/
+.index_like-icon {
+	color: #ff2581;
+
+}
+
+.index_like-icon_zero{
+	color:#8899a6;
+	
+}
+
+
+.index_comments-icon{
+	color: #ff2581;
+}
+
+.index_comments-icon_zero{
+	color: #8899a6;
+}
+
+.index_icons .fa {
+  font-size: 20px;
+  margin-right: 5px;
+
+}
+
+
+/*indexページのボックスを綺麗に並べるcss index のrowに記述ずみ	*/
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+ 
+
+/*showページの画像を大きくする*/
+.show-pic-size{
+	width: 330px;
+	height: 240px;
+	
+	}
+
+.navbar {
+	border-radius: 0;
+}
+.btn-round{
+	border-radius: 50%
+
+}
+
+.pic-size-list{
+	width: 520px;
+	height: 300px;
+}
+

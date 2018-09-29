@@ -1,0 +1,47 @@
+<h3>ウサギ一覧</h3>
+ <div class="center">
+  <div class="row row-eq-height">
+    
+    <% @rabbits.each do |rabbit| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="thumbnail message"> 
+        <% if rabbit.image? %>
+         <%= link_to (image_tag rabbit.image.url), rabbit  %>
+        <% end %> 
+
+         <div class="caption">
+            <h3 clas="message-title"><%= rabbit.title %></h3>   
+             <p><%= link_to "詳細を見る", post_path(rabbit),class:"btn btn-default" %></p>
+              <div class="index_icons"> 
+                <% if rabbit.likes.size >= 1 %>
+                  <span class="fa fa-heart index_like-icon"></span><%= rabbit.likes.size %> 
+                <% else %>
+                  <span class="fa fa-heart index_like-icon_zero"></span><%= rabbit.likes.size %>
+                <% end %>
+
+                <span style="margin-right: 25px;"></span>
+
+               <% if rabbit.comments.size >= 1 %>
+                  <span class="fa fa-comments-o index_comments-icon"></span><%= rabbit.comments.size %>  
+                <% else %>
+                  <span class="fa fa-comments-o index_comments-icon_zero"></span><%= rabbit.comments.size %> 
+                <% end %>
+            </div>
+          </div> 
+
+
+       </div><!-- end of thumbnail -->
+      </div><!-- end of col-xs-12 col-sm-6 col-md-4 -->
+     <% end %> 
+  </div><!-- end of row row-eq-height -->
+  <p><%= link_to "一覧に戻る", root_path,class:"btn btn-default" %></p>
+</div><!-- end of center -->
+
+
+<!-- このスクリプトは、bootatrapでドロップダウンなどを出すときに必要-->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+         <script>
+           $('.dropdown-toggle').dropdown()
+  </script>
+

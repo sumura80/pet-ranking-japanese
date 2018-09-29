@@ -1,0 +1,50 @@
+<h3><%= params[:category] %></h3>
+ <div class="center">
+  <div class="row row-eq-height">
+    <% if @posts.count == 0 %>
+    <h3>There are posts in this category yet </h3>
+    <% else %>
+    <% @posts.each do |post| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="thumbnail message"> 
+            <% if post.image? %>
+              <%= link_to (image_tag post.image.url), post %>
+            <% end %>       
+         
+          <div class="caption">
+          <h3 clas="message-title"><%= post.title %></h3>   
+          <p><%= link_to "詳細を見る", post_path(post),class:"btn btn-default" %></p>
+            <div class="index_icons"> 
+              <% if post.likes.size >= 1 %>
+                <span class="fa fa-heart index_like-icon"></span><%= post.likes.size %> 
+              <% else %>
+                <span class="fa fa-heart index_like-icon_zero"></span><%= post.likes.size %>
+              <% end %>
+
+              <span style="margin-right: 25px;"></span>
+
+             <% if post.comments.size >= 1 %>
+                <span class="fa fa-comments-o index_comments-icon"></span><%= post.comments.size %>  
+              <% else %>
+                <span class="fa fa-comments-o index_comments-icon_zero"></span><%= post.comments.size %> 
+              <% end %>
+          </div>
+        </div>
+       </div> 
+
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+ <p><%= link_to "一覧に戻る", root_path,class:"btn btn-default" %></p>
+</div>
+
+
+
+<!-- このスクリプトは、bootatrapでドロップダウンなどを出すときに必要-->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+         <script>
+           $('.dropdown-toggle').dropdown()
+  </script>
+

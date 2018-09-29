@@ -1,0 +1,60 @@
+
+<div class="message-show">
+	<br>
+	<div class="row">
+	  <div class="col-md-4">
+		<%= image_tag @post.image_url,class:"show-pic-size"  %>
+	<h2><%= @post.title %></h2>
+	<p class="message-posted-by"><%= time_ago_in_words (@post.created_at) %> 前  <%= @post.user.username %> さんによって投稿されました。</p>
+	<p>種類: <%= @post.category.name %></p>
+
+					<div class="like_button posts-show-item">
+				 <!-- if文を用いて、表示内容を切り替え -->
+						<%if @my_like.present? %>
+				      <%= link_to("/likes/#{@post.id}/destroy",{method: "post"})do %>
+				        <span class="fa fa-heart like-btn-unlike btn btn-default btn-round"></span>
+				      <% end %>
+			      <% else %>
+				      <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+				        <span class="fa fa-heart like-btn btn btn-default btn-round"></span>
+				      <% end %>
+			      <% end %>
+			      <%= @likes.count  %>
+				</div>
+		</div>
+
+    <div class="visible-xs visible-sm" style="height:30px;"></div>
+
+
+      <!-- ここからshowの右画面 -->
+    <div class="col-md-7 col-md-offset-1 ">
+				<p><%= @post.description %></p>
+		</div><!-- end of col-md-7 col-md-offset-1 -->
+
+	</div><!-- row -->
+
+<br><hr>
+
+
+	<% if @comments_by_votes.length >= 2 %>
+		<h3>コメント<%= @comments_by_votes.length %> 件:</h3>
+		<% else %>
+			<h3>コメント<%= @comments_by_votes.length %> 件:</h3>
+	<% end %>
+	<%= render @comments_by_votes %>
+	
+
+	<h3 class="reply-to-message">コメントを書く:</h3>
+	<%= render 'comments/form' %>
+
+	<div class="btn-group">
+		<%= link_to "一覧に戻る", root_path, class:"btn btn-default" %>
+		<% if user_signed_in? %>
+			<% if @post.user_id == current_user.id %>
+				<%= link_to "編集", edit_post_path(@post), class:"btn btn-success" %>
+				<%= link_to "削除", post_path(@post), method: :delete, data:{confirm: "Are you sure?" }, class:"btn btn-danger" %>
+			<% end %>
+		<% end %>
+		</div>
+	</div>
+	<br><br><br><br>

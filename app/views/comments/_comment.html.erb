@@ -1,0 +1,28 @@
+<!-- この_comment.html.erbは_formに記述した内容がpostsのshowページに表示される。 -->
+<div class="comments_box">
+	<p><%= comment.content %></p><br>
+	<p class="message-posted-by"><%= time_ago_in_words(comment.created_at) %> 前 <%= comment.user.username %>  さんによって投稿されました。</p>
+	<div class="like_button posts-show-item">
+			<%if current_user.present? && comment.votes.where(user_id:current_user.id).present?%>
+				<%comment.votes.where(user_id:current_user.id).each do |my_vote|%>
+	       <%= link_to("/votes/#{my_vote.id}/destroy",{method: "post"})do %>
+	        <span class="fa fa-thumbs-o-up vote-btn-donwvote"></span>
+	       <% end %>
+				<% end %>
+      <% else %>
+	      <%= link_to("/votes/#{comment.id}/create", {method: "post"}) do %>
+	        <span class="fa fa-thumbs-o-up vote-btn"></span>
+	      <% end %>
+      <% end %>
+      <%= comment.votes.count  %>
+	</div>
+
+
+	<% if user_signed_in? %>
+		<% if comment.user_id == current_user.id %>
+		<%= link_to "削除", post_comment_path(comment.post, comment), method: :delete, data:{confirm: "Are you sure?"} %>
+		<% end %>
+	<% end %>
+
+
+</div>

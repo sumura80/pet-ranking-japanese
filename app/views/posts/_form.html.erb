@@ -1,0 +1,36 @@
+<%= form_for(@post, html: {multipart: true}) do |form| %>
+
+    <div class="form-group">
+    <%= form.label :動物の種類 %>
+    <%= select_tag :category_id, options_for_select(@categories), prompt: "種類を選んでください",class: "form-control"  %>
+   </div>
+  <div class="form-group">
+    <%= form.label :動物の名前 %>
+    <%= form.text_field :title,class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= form.label :動物の詳細 %>
+    <%= form.text_area :description,class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= form.label :画像 %>
+    <%= form.file_field :image,class: "form-control" %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= form.submit "新規登録", class:"btn btn-primary"%>
+  </div>
+<% end %>
+
+
+
+<!-- このスクリプトは、bootatrapでドロップダウンなどを出すときに必要-->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+         <script>
+           $('.dropdown-toggle').dropdown()
+  </script>
