@@ -1,24 +1,27 @@
 # README
+## Name: Pet Ranking
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Overview: 自分の好きなペットに投票できるアプリ。
+サインインしている時に限りコメントを投稿できる。
 
-Things you may want to cover:
+# Function:実装機能リスト
+```
+・コメント投稿機能
+・カテゴリー１覧表示機能
+・画像登録機能(carrierwave)
+・LIKEボタン機能
+・投票機能
+・サインイン機能（Devise）
+```
 
-* Ruby version
+# Gems:
+```
+1. devise
+2. Bootstrap3
+3. carrierwave
+4. fog
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Description
+Rails: 5.1.6
+Database: PostgreSQL
