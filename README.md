@@ -1,10 +1,11 @@
 # README
 ## Name: Pet Ranking
 
-# Overview: 自分の好きなペットに投票できるアプリ。
+## Overview: 
+自分の好きなペットに投票できるアプリ。
 サインインしている時に限りコメントを投稿できる。
 
-# Function:実装機能リスト
+## Function:実装機能リスト
 ```
 ・コメント投稿機能
 ・カテゴリー１覧表示機能
@@ -14,7 +15,7 @@
 ・サインイン機能（Devise）
 ```
 
-# Gems:
+## Gems:
 ```
 1. devise
 2. Bootstrap3
@@ -22,6 +23,6 @@
 4. fog
 ```
 
-# Description
+## Description
 Rails: 5.1.6
 Database: PostgreSQL
