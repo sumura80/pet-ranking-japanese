@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 
 #画像の加工とか
